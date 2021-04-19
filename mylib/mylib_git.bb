@@ -12,8 +12,13 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-# No information for SRC_URI yet (only an external source tree was specified)
-SRC_URI = ""
+SRC_URI = "git://github.com/rmartens/mylib.git;protocol=https"
+
+# Modify these as desired
+PV = "1.0+git${SRCPV}"
+SRCREV = "0827a8c49f73c8e4e0ea56d60afbb1a752f6bd99"
+
+S = "${WORKDIR}/git"
 
 inherit qmake5
 DEPENDS += "qtbase"
@@ -22,4 +27,3 @@ do_install_append() {
     install -d ${D}${includedir}/mylib
     install -m 0644 ${S}/include/* ${D}${includedir}/mylib/
 }
-

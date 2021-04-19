@@ -12,8 +12,13 @@
 LICENSE = "CLOSED"
 LIC_FILES_CHKSUM = ""
 
-# No information for SRC_URI yet (only an external source tree was specified)
-SRC_URI = ""
+SRC_URI = "git://github.com/rmartens/myapp.git;protocol=https"
+
+# Modify these as desired
+PV = "1.0+git${SRCPV}"
+SRCREV = "cffec709cda6d0c635dfc402bd9ad53742c705ff"
+
+S = "${WORKDIR}/git"
 
 inherit qmake5
 DEPENDS += "mylib"
